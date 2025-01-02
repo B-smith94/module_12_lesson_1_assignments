@@ -2,15 +2,13 @@
 import useInventory from "../hooks/useInventory";
 import { Container, Row, Col, ListGroup, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import ProductContext from "../context/ProductContext";
+
 
 
 const ProductList = () => {
     const { fetchProducts, deleteProduct } = useInventory();
     const navigate = useNavigate();
     const products = fetchProducts();
-    console.log(products);
 
     return (
         <Container>
@@ -29,7 +27,9 @@ const ProductList = () => {
                     </ListGroup>
                 </Col>
             </Row>
-            <Button onClick={() => navigate('add-product')} variant="success">Add New Product</Button>
+            <Button onClick={() => navigate('add-product')} variant="success">
+                Add New Product
+            </Button>
         </Container>
     )
 }

@@ -1,5 +1,5 @@
 // Task 1
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import ProductContext from "../context/ProductContext";
 const useInventory = () => {
     const { products, setProducts } = useContext(ProductContext)
