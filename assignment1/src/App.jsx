@@ -20,12 +20,10 @@ function App() {
 
   return (                        
     <ContactContext.Provider value={{ contacts, setContacts }}>  
-      <Router>
-        <Routes>
-          <Route path='/' element={<ContactList/>}/>
-          <Route path='/contact-details' element={<ContactDetails/>}/>
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path='/' element={<ContactList/>}/>
+        <Route path='/contact-details' element={<ContactDetails/>}/>
+      </Routes>
     </ContactContext.Provider>
   )
 }
