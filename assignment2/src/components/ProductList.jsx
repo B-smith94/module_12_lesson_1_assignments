@@ -10,8 +10,7 @@ const ProductList = () => {
     const products = fetchProducts();
     const navigate = useNavigate();
 
-
-
+    console.log(products);
 
     return (
         <Container>
