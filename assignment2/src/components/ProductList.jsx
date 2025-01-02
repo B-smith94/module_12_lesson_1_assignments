@@ -7,10 +7,9 @@ import ProductContext from "../context/ProductContext";
 
 
 const ProductList = () => {
-    const { deleteProduct } = useInventory();
-    const { products } = useContext(ProductContext);
+    const { fetchProducts, deleteProduct } = useInventory();
     const navigate = useNavigate();
-
+    const products = fetchProducts();
     console.log(products);
 
     return (
