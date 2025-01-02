@@ -10,8 +10,8 @@ const useInventory = () => {
 
     const addProduct = (product) => {
         fetchProducts();
-        const newProduct = products.push(product)
-        setProducts(newProduct);
+        const newProduct = [product]
+        setProducts([...products, newProduct]);
     };
 
     const deleteProduct = (product) => {
