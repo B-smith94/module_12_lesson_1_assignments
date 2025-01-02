@@ -2,11 +2,13 @@
 import useInventory from "../hooks/useInventory";
 import { Container, Row, Col, ListGroup, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import ProductContext from "../context/ProductContext";
 
 
 const ProductList = () => {
-    const { fetchProducts, deleteProduct } = useInventory();
-    const products = fetchProducts();
+    const { deleteProduct } = useInventory();
+    const { products } = useContext(ProductContext);
     const navigate = useNavigate();
 
     console.log(products);

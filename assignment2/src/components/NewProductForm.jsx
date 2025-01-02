@@ -1,7 +1,8 @@
 // Task 3
-import { useState } from "react";
+import { useState, useContext } from "react";
 import useInventory from "../hooks/useInventory";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";;
+import ProductContext from "../context/ProductContext";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 
@@ -9,6 +10,8 @@ const NewProductForm = () => {
     const {fetchProducts, addProduct} = useInventory();
     const navigate = useNavigate();
     const [newProduct, setNewProduct] = useState('');
+    const { products } = useContext(ProductContext)
+
 
     const handleSubmit = (e) => {
         e.preventDefault();

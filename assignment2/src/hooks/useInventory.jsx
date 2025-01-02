@@ -1,17 +1,20 @@
 // Task 1
-import { useState } from "react";
+import { useState, useContext } from "react";
+import ProductContext from "../context/ProductContext";
 const useInventory = () => {
-    const [products, setProducts] = useState(['PS5', 'Xbox', 'Switch'])
+    const { products, setProducts } = useContext(ProductContext)
 
     const fetchProducts = () => {
         return products;
     };
 
     const addProduct = (product) => {
+        fetchProducts();
         setProducts(products.push(product));
     };
 
     const deleteProduct = (product) => {
+        fetchProducts();
         const index = products.indexOf(product);
         const deletedProduct = products.splice(index, 1)
         setProducts(products.filter(product => product != deletedProduct));
