@@ -8,14 +8,13 @@ const useInventory = () => {
     };
 
     const addProduct = (product) => {
-        setProducts(prevProduct => ([
-            ...prevProduct,
-            product]))
+        setProducts(products.push(product));
     };
 
     const deleteProduct = (product) => {
-        const filteredProducts = products.filter(() => product);
-        setProducts(filteredProducts);
+        const index = products.indexOf(product);
+        const deletedProduct = products.splice(index, 1)
+        setProducts(products.filter(product => product != deletedProduct));
     };
 
     return {fetchProducts, addProduct, deleteProduct};
