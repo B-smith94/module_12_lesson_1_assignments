@@ -1,5 +1,4 @@
 //Task 2
-import { useEffect } from "react";
 import useInventory from "../hooks/useInventory";
 import { Container, Row, Col, ListGroup, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
