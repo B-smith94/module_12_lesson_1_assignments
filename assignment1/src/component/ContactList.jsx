@@ -6,9 +6,13 @@ import { Container, Row, Col, ListGroup, Button } from 'react-bootstrap';
 
 const ContactList = () => {
     const { contacts, setContacts } = useContext(ContactContext);
-    const { contact, setContact} = useState('');
     const navigate = useNavigate();
 
+    const handleClick = (contact) => {
+        const selectContact = contacts.findIndex((name) => contact)
+        setContacts([contacts[selectContact]]);
+        navigate('/contact-details');
+    };
 
     return (
         <Container>
@@ -17,7 +21,7 @@ const ContactList = () => {
                     <h1>Contacts</h1>
                     <ListGroup>
                         {contacts.map(contact => (
-                            <ListGroup.Item key={contact.name} className='d-flex justify-content-between align-items-center shadow' style={{cursor: 'pointer'}}>
+                            <ListGroup.Item key={contact.name} onClick={handleClick} className='d-flex justify-content-between align-items-center shadow' style={{cursor: 'pointer'}}>
                                 {contact.name}
                             </ListGroup.Item>
                         ))}
@@ -25,7 +29,7 @@ const ContactList = () => {
                 </Col>
             </Row>
         </Container>
-    )
+    );
 }
 
 export default ContactList;

@@ -10,15 +10,12 @@ function App() {
     {
     name: 'John Doe',
     email: 'jdoe@gmail.com',
-    isSelected: false
 }, {
     name: 'Carol Whilte',
     email: 'cwhite@hotmail.com',
-    isSelected: false
 }, {
     name: 'Tim Drake',
     email: 'tdrake@gotham.net',
-    isSelected: false
 }]) 
 
   return (                        
